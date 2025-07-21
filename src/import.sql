@@ -8,7 +8,7 @@ declare
 	_path varchar;
 	new_seq bigint;
 begin
-	select '/Users/khin/Downloads/gb_test/gb_test/src/data/' into _path;
+	select '/Users/khin/Downloads/gb_test/gb_test/data/' into _path; -- Обязательно поменять путь на свой!!!
 	if header = True then
 		execute format('copy %s from ''%s%s'' delimiter E''%s'' csv header', _table, _path, file_name, del);
 	else
@@ -23,9 +23,15 @@ declare
 	name_list varchar[] = array[
 			['students', 'students.csv'], 
 			['parents', 'parents.csv'],
+      ['student_parents', 'student_parents.csv'],
 			['work_types', 'work_types.csv'],
 			['subjects', 'subjects.csv'],
-      ['student_parents', 'student_parents.csv']];
+      ['classes', 'classes.csv'],
+      ['class_student', 'class_student.csv'],
+      ['teachers', 'teachers.csv'],
+      ['teacher_subject', 'teacher_subject.csv'],
+      ['class_teacher', 'class_teacher.csv'],
+      ['grades', 'grades.csv']];
 
 	match varchar[];
 begin

@@ -135,10 +135,10 @@ create table class_teacher (
 );
 alter table class_teacher
 add constraint check_class_teacher_start_date check (
-  extract(year from start_date) between 2021 and extract(year from current_date) + 1
+  extract(year from start_date) between 2021 and 2025
 ),
 add constraint check_class_teacher_end_date check (
-  extract(year from end_date) between 2021 and extract(year from current_date)
+  extract(year from end_date) between 2021 and 2025
 ),
 add constraint check_class_teacher_dates_order check (start_date <= end_date);
 
@@ -156,10 +156,10 @@ create table class_student (
 );
 alter table class_student
 add constraint check_class_student_start_date check (
-  extract(year from start_date) between 2021 and extract(year from current_date) + 1
+  extract(year from start_date) between 2021 and 2025
 ),
 add constraint check_class_student_end_date check (
-  extract(year from end_date) between 2021 and extract(year from current_date)
+  extract(year from end_date) between 2021 and 2025
 ),
 add constraint check_class_student_dates_order check (start_date <= end_date);
 
